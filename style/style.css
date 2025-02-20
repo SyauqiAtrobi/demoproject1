@@ -91,7 +91,7 @@ body {
 }
 
 #formData {
-    background-image: url('/image/Wp-tulip.png');
+    background-image: url('../image/Wp-tulip.png');
     background-size: cover;
     position: relative;
     height: 150vh;
