@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/styleNav.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>UndanganBersama</title>
+    <link rel="shortcut icon" href="image/Me.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!--NAVIGATION-->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-out" data-aos-duration="1500">
+                UndanganBersama<span>.com</span>
+            </div>
+            <div class="links">
+                <div class="link actived" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="100"><a
+                        onclick="showContent('home')">Home</a></div>
+                <div class="link" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="200"><a
+                        onclick="showContent('about')">About</a></div>
+                <div class="link" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300"><a
+                        onclick="showContent('skills')">Skills</a></div>
+                <div class="link" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="400"><a
+                        onclick="showContent('project')">Project</a></div>
+                <div class="link" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="500"><a
+                        onclick="showContent('contact')">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a class="link" onclick="showContent('home'); cancel()">Home</a>
+                <a class="link" onclick="showContent('about'); cancel()">About</a>
+                <a class="link" onclick="showContent('skills'); cancel()">Skills</a>
+                <a class="link" onclick="showContent('project'); cancel()">Project</a>
+                <a class="link" onclick="showContent('contact'); cancel()">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="content-select">
+        <img src="image/Home.png" alt="">
+        <div class="main-containers justify-content-md-center">
+            <div class="text">
+                <h1>Undangan Digital Untuk Momen Spesial Anda</h1>
+                <p>Ingin undangan digital? anda berada di tempat yang tepat!</p>
+                <p>UndanganBersama.com adalah penyedia jasa pembuatan undangan digital dengan beragam fitur menarik
+                    dan
+                    kemudahan penggunaan. Kami menawarkan desain yang elegan, interaktif, dan mudah dibagikan.</p>
+                <p>Kenapa memilih kami?</p>
+                <ul>
+                    <li>Harga Terjangkau</li>
+                    <li>Fitur Lengkap</li>
+                    <li>Mudah Digunakan</li>
+                </ul>
+                <p>Tunggu apalagi? Ayo buat undangan digital impian untuk hari spesial Anda sekarang hanya di
+                    <b>UndanganBersama.com</b>
+                </p>
+            </div>
+            <div class="decoration">
+                <img src="image/ring-rose.png" alt="">
+                <a onclick="showContent('formData')">Pesan Sekarang!</a>
+            </div>
+        </div>
+    </section>
+    <section id="modalLoad">
+        <div id="load"></div>
+        <p class="textLoad">Sedang mengirim Data...</p>
+    </section>
+    <section id="modalPopUp">
+        <div class="modals">
+            <h1 id="headModal">Data Telah Kami Terima</h1>
+            <p id="textModal">Jangan lupa hubungi kami di nomor <a target="_blank" href="https://wa.me/+6281806490304">081806490304</a></p>
+            <button id="btnClosePopUp" onclick="closeModal()">Oke</button>
+        </div>
+    </section>
+
+    <section id="formData" class="content-select d-none">
+        <div id="isiData">
+            <h1 class="text-center mt-5">Buat Undangan</h1><br>
+            <form>
+                <div class="formBox sectionBox">
+                    <h3>Pria</h3>
+                    <label for="NamaLengkapL">Nama Lengkap *</label>
+                    <input type="text" id="NamaLengkapL" required>
+                    <label for="PanggilanL">Nama Panggilan</label>
+                    <input type="text" id="PanggilanL">
+                    <label for="AnakKeL">Anak Ke- *</label>
+                    <input type="number" id="AnakKeL" required>
+                    <label for="JumlahSaudaraL">Jumlah Saudara</label>
+                    <input type="number" id="JumlahSaudaraL">
+                    <label for="NamaAyahL">Nama Ayah *</label>
+                    <input type="text" id="NamaAyahL" required>
+                    <label for="NamaIbuL">Nama Ibu *</label>
+                    <input type="text" id="NamaIbuL" required>
+                </div>
+                <div class="formBox sectionBox">
+                    <h3>Perempuan</h3>
+                    <label for="NamaLengkapP">Nama Lengkap *</label>
+                    <input type="text" id="NamaLengkapP" required>
+                    <label for="PanggilanP">Nama Panggilan</label>
+                    <input type="text" id="PanggilanP">
+                    <label for="AnakKeP">Anak Ke- *</label>
+                    <input type="number" id="AnakKeP" required>
+                    <label for="JumlahSaudaraP">Jumlah Saudara</label>
+                    <input type="number" id="JumlahSaudaraP">
+                    <label for="NamaAyahP">Nama Ayah *</label>
+                    <input type="text" id="NamaAyahP" required>
+                    <label for="NamaIbuP">Nama Ibu *</label>
+                    <input type="text" id="NamaIbuP" required>
+                </div>
+
+                <div class="formBox sectionBox">
+                    <h3>Data Acara</h3>
+                    <label for="LokasiAcara">Lokasi Acara *</label>
+                    <input type="text" id="LokasiAcara" required>
+                    <label for="TanggalAcara">Tanggal Acara *</label>
+                    <input type="date" id="TanggalAcara" required>
+                    <label for="JamMulai">Jam Mulai *</label>
+                    <input type="time" id="JamMulai" required>
+                    <label for="JamSelesai">Jam Selesai *</label>
+                    <input type="time" id="JamSelesai" required>
+                </div>
+                <div class="formBox sectionBox">
+                    <h3>Informasi Pemesan</h3>
+                    <label for="Emailed">Email</label>
+                    <input type="email" id="Emailed">
+                    <label for="NoHP">WhatsApp *</label>
+                    <input type="tel" id="NoHP" required>
+                    <p id="notedForm">Ini
+                        dibutuhkan untuk kami menghubungi Anda</p>
+                    <label for="agama">Khusus Agama</label>
+                    <select id="agama" style="width: 60%;">
+                        <option value="Semua">Semua</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Budha">Budha</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                    <label for="paket">Pilih Paket</label>
+                    <select id="paket" style="width: 60%;">
+                        <option value="Normal">Normal</option>
+                        <option value="Menengah">Menengah</option>
+                        <option value="Lengkap">Lengkap</option>
+                    </select>
+                    <label for="tema">Pilih Tema</label>
+                    <select id="tema" style="width: 60%;">
+                        <option value="Rose">Rose</option>
+                        <option value="Vinyl">Vinyl</option>
+                        <option value="Elegant">Elegant</option>
+                    </select>
+                </div>
+                <div class="formBox" style="grid-column: span 2; display:none" id="DataPernikahan">
+                    <h3>Data Pernikahan</h3>
+                    <label for="Cerita">Ceritakan Kisah Anda</label>
+                    <textarea id="Cerita" rows="5" class="w-75"></textarea>
+                    <label for="fileInput">Upload Galeri</label>
+                    <input type="file" id="fileInput" accept="image/*,video/*" multiple>
+                </div>
+                <button id="btnNext">next</button>
+                <button id="btnBack">Back</button>
+
+
+                <p id="notedBottom">Noted: <br>Yang bertanda (*)
+                    wajib di isi</p>
+                <div class="validasi">
+                    <h4>Konfirmasi</h4>
+                    <input type="checkbox" id="konfirm">
+                    <label for="konfirm"> Konfirmasi ke kami lewat wa <a target="_blank"
+                            href="https://wa.me/+6281806490304">081806490304</a></label>
+                    <h5>Total</h5>
+                    <p>Rp. <span id="harga">50.000</span></p>
+                </div>
+                <button type="submit" id="btnSubmit">Selesai</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="script/pageNav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script/sendData.js"></script>
+    <script src="script/pageControll.js"></script>
+
+</body>
+
+</html>
